@@ -5,7 +5,7 @@ const port = 3001
 io.on('connection', function(socket) {
   console.log('A client is connected!')
 
-  socket.on('my other event', function(data) {
+  socket.on('candidate', data => {
     console.log(data)
   })
 })
