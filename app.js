@@ -6,8 +6,10 @@ let handshakes = {
   'handshakeId': {
     offerFromP1: {},
     answerFromP2: {},
-    candidatesToP1: '',
-    candidatesToP2: '',
+    idPeer1: '',
+    idPeer2: '',
+    candidatesToPeer1: [],
+    candidatesToPeer2: [],
     status: 'completed'
   }
 }
@@ -15,12 +17,19 @@ let handshakes = {
 io.on('connection', function(socket) {
   console.log('A client is connected!')
 
-  socket.on('candidate', data => {
+  socket.on('newCandidate', data => {
+    // comes with the handshakeId and the peer's id
     console.log(data)
   })
 
   socket.on('handshakeRequest', data => {
     socket.emit('id', "handshakeId")
+  })
+
+  socket.on('answer', data => {
+    // comes with the handshakeId and the actual answer
+    // goes with the peerId
+    socket.emit('', '')
   })
 })
 
