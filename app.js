@@ -1,5 +1,6 @@
 const app = require('http').createServer()
 const io = require('socket.io')(app)
+const uuid = require('uuid/v4')
 const port = 3001
 
 let handshakes = {
@@ -35,6 +36,12 @@ io.on('connection', function(socket) {
   socket.on('offer', data => {
     // first step
     // handshake starts here
+    const idPeer1 = uuid()
+    handshakes[uuid()] = {
+      offerFromP1: data,
+      idPeer1,
+      status: 'offerEmitted'
+    }
   })
 })
 
