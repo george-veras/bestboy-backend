@@ -31,6 +31,11 @@ io.on('connection', function(socket) {
     // goes with the peerId
     socket.emit('', '')
   })
+
+  socket.on('offer', data => {
+    // first step
+    // handshake starts here
+  })
 })
 
 function onListening() {
