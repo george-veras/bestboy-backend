@@ -3,6 +3,7 @@ const io = require('socket.io')(app)
 const uuid = require('uuid/v4')
 const port = 3001
 
+// TODO: Design a schema for this.
 let handshakes = {
   'handshakeId': {
     offerFromP1: {},
