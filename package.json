@@ -8,7 +8,7 @@
   "author": "George Véras Valentim <george.veras.valentim@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "express": "^4.17.1",
+    "express": "^4.18.2",
     "socket.io": "^2.2.0",
     "uuid": "^3.3.3"
   }
